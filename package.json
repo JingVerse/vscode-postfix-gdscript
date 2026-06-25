@@ -1,0 +1,51 @@
+{
+  "name": "vscode-postfix-gdscript",
+  "displayName": "GDScript Postfix Completion",
+  "description": "Postfix completion templates for GDScript (Godot Engine)",
+  "version": "0.1.1",
+  "publisher": "jinglepp",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JingVerse/vscode-postfix-gdscript"
+  },
+  "bugs": {
+    "url": "https://github.com/JingVerse/vscode-postfix-gdscript/issues"
+  },
+  "homepage": "https://github.com/JingVerse/vscode-postfix-gdscript#readme",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": ["Programming Languages", "Snippets"],
+  "keywords": ["gdscript", "godot", "postfix", "completion", "snippet"],
+  "activationEvents": [
+    "onLanguage:gdscript",
+    "workspaceContains:project.godot"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "GDScript Postfix Completion",
+      "properties": {
+        "postfix-gdscript.disabledTemplates": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "List of template names to disable (e.g. [\"return\", \"len\"])"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.125.0",
+    "@types/node": "^18.19.130",
+    "typescript": "^5.9.3",
+    "@vscode/vsce": "^3.0.0"
+  }
+}
